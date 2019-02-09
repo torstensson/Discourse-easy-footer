@@ -47,19 +47,19 @@ $(document).ready(function() {
       sec[0] +
       '</span><div id="' +
       klass +
-      '"><ul></ul></div></div>';
+      '-footer"><ul></ul></div></div>';
   });
 
   $(".custom-footer .links").html(rawMain);
 
   $.each(sec, function() {
     var sec = $.map(this.split(","), $.trim),
-      parentBase = sec[0].replace(/\s+/g, "-").toLowerCase(),
+      parentBase = sec[0].replace(/\s+/g, "-").toLowerCase() + '-footer',
       mainUl = $("#" + parentBase + " ul").html();
 
     $.each(seg, function() {
       var seg = $.map(this.split(","), $.trim),
-        parentForItem = seg[0].replace(/\s+/g, "-").toLowerCase(),
+        parentForItem = seg[0].replace(/\s+/g, "-").toLowerCase() + '-footer',
         klass = seg[1];
 
       if (parentBase == parentForItem) {
